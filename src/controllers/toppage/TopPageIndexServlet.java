@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Routine;
 import models.Task;
 import models.User;
 import utils.DBUtil;
@@ -51,20 +52,20 @@ public class TopPageIndexServlet extends HttpServlet {
                                   .setMaxResults(15)
                                   .getResultList();
 
-        /*List<Routine> routines = em.createNamedQuery("getMyAllRoutines", Routine.class)
+        List<Routine> routines = em.createNamedQuery("getMyAllRoutines", Routine.class)
                 .setParameter("user", login_user)
                 .setFirstResult(15 * (page - 1))
                 .setMaxResults(15)
-                .getResultList();*/
+                .getResultList();
 
         long tasks_count = (long)em.createNamedQuery("getMyTasksCount", Long.class)
                                      .setParameter("user", login_user)
                                      .getSingleResult();
 
 
-        /*long routines_count = (long)em.createNamedQuery("getMyRoutinesCount", Long.class)
+        long routines_count = (long)em.createNamedQuery("getMyRoutinesCount", Long.class)
                                      .setParameter("user", login_user)
-                                     .getSingleResult();*/
+                                     .getSingleResult();
 
         em.close();
 
@@ -72,9 +73,9 @@ public class TopPageIndexServlet extends HttpServlet {
         request.setAttribute("tasks_count", tasks_count);
         request.setAttribute("page", page);
 
-        /*request.setAttribute("routines", routines);
+        request.setAttribute("routines", routines);
         request.setAttribute("routines_count", routines_count);
-        request.setAttribute("page", page);*/
+        request.setAttribute("page", page);
 
         if(request.getSession().getAttribute("flush") != null) {
             request.setAttribute("flush", request.getSession().getAttribute("flush"));
