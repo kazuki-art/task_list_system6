@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Routine;
+
 /**
  * Servlet implementation class RoutinesNewServlet
  */
@@ -31,6 +33,9 @@ public class RoutinesNewServlet extends HttpServlet {
         // TODO Auto-generated method stub
         request.setAttribute("_token", request.getSession().getId());
 
+        Routine r = new Routine();
+
+        request.setAttribute("routine", r);
 
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/routines/new.jsp");

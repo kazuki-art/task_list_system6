@@ -141,16 +141,16 @@ table#task_list th {
 }
 
 table#task_list .task_name {
-    width: 20%;
+    width: 22%;
     padding: 10px 2%;
 }
 
 table#task_list .task_title {
-    width: 37%;
+    width: 40%;
 }
 
 table#task_list .task_limit {
-    width: 20%;
+    width: 15%;
 }
 
 table#task_list .task_action {

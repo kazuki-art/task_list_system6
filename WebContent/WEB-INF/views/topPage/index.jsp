@@ -50,7 +50,11 @@
             </c:forEach>
         </div>
 
-        <p><a href="<c:url value='/tasks/new' />">新規タスクの登録</a></p>
+        <c:if test="${sessionScope.login_user != null}">
+
+                        <a href="<c:url value='/tasks/new' />">新規タスク登録</a>&nbsp;
+
+                    </c:if>
 
         <h3>【自分のルーティン 一覧】</h3>
 
@@ -90,7 +94,11 @@
             </c:forEach>
         </div>
 
- <p><a href="<c:url value='/routines/new' />">新規ルーティンの登録</a></p>
+ <c:if test="${sessionScope.login_user != null}">
+
+
+                        <a href="<c:url value='/routines/new' />">新規ルーティン登録</a>&nbsp;
+                    </c:if>
 
     </c:param>
 </c:import>

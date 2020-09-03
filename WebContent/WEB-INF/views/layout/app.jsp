@@ -13,11 +13,7 @@
             <div id="header">
                 <div id="header_menu">
                     <h1><a href="<c:url value='/' />">タスク 管理システム</a></h1>&nbsp;&nbsp;&nbsp;
-                    <c:if test="${sessionScope.login_user != null}">
 
-                        <a href="<c:url value='/tasks/index' />">タスク管理</a>&nbsp;
-                        <a href="<c:url value='/routines/index' />">ルーティン管理</a>&nbsp;
-                    </c:if>
                 </div>
                 <c:if test="${sessionScope.login_user != null}">
                     <div id="user_name">
